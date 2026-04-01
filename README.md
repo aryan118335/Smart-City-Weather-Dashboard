@@ -38,16 +38,3 @@ HTML, CSS, vanilla JavaScript, Fetch API, Geolocation API, Local Storage
 4. Open `index.html` in your browser
 
 ---
-
-## Milestones
-
-| # | What | Due | Status |
-|---|------|-----|--------|
-| 1 | Project setup & README | 23rd March | Done |
-| 2 | API integration + responsive UI | 1st April | Upcoming |
-| 3 | Search, filter, sort features | 8th April | Upcoming |
-| 4 | Final cleanup + deployment | 10th April | Upcoming |
-
----
-
-Made by Aryan Deshmukh
