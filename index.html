@@ -16,6 +16,28 @@
     <button id="btnSearch">Search</button>
   </div>
 
+  <div id="listSection">
+    <h2>City Weather Cards</h2>
+    <div id="cityList"></div>
+  </div>
+
+  <div id="controls">
+    <input type="text" id="dataSearchInput" placeholder="Search cities or weather...">
+    <select id="filterSelect">
+      <option value="all">All</option>
+      <option value="clear">Clear</option>
+      <option value="clouds">Clouds</option>
+      <option value="rain">Rain</option>
+    </select>
+    <select id="sortSelect">
+      <option value="name-asc">Name A-Z</option>
+      <option value="name-desc">Name Z-A</option>
+      <option value="temp-asc">Temp Low-High</option>
+      <option value="temp-desc">Temp High-Low</option>
+    </select>
+    <button id="themeToggle">Dark Mode</button>
+  </div>
+
   <div id="loading" class="hidden">Loading...</div>
   <div id="error" class="hidden"></div>
 
