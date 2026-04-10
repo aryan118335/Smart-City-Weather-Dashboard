@@ -34,8 +34,23 @@ This dashboard allows users to search for real-time weather data for any city gl
 3. **Run Locally**:
    - Open `index.html` in any modern web browser or use a local server like `Live Server`.
 
-## 📝 Milestone 3 Requirements Verified
+## 📝 Milestone 3 Requirements Verified 
 - [x] Use of `.filter()` to manage search results.
 - [x] Use of `.map()` to render dynamic UI components.
 - [x] Use of `.sort()` for data organization.
 - [x] Minimalist, clean CSS using standard fonts (Arial).
+
+
+## Project Structure
+index.html: Contains the semantic structure and dashboard layout.
+
+style.css: Implements a minimalist "Antigravity" design focused on readability and mobile responsiveness.
+
+script.js: Handles API calls, state management, and DOM updates using ES6+ features.
+
+## Deployment
+The project is live and hosted via Netlify.
+
+Continuous Deployment: The site is linked to the GitHub repository. Any changes pushed to the main branch are automatically built and deployed to the live server.
+
+## Live Link: https://smart-city-weather-dashboard.netlify.app/
