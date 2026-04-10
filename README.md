@@ -1,40 +1,41 @@
 # Smart City Weather Dashboard
 
-A weather app that tells you more than just the temperature. It gives you actual suggestions — like whether to carry an umbrella or wear a jacket — based on what the weather looks like right now.
+A basic weather dashboard built for a web development college assignment. This project demonstrates API integration, dynamic DOM manipulation, and the use of JavaScript Higher-Order Functions (HOF).
 
----
+## 🎓 Project Overview
 
-## API
+This dashboard allows users to search for real-time weather data for any city globally and manage a predefined list of "saved" cities to demonstrate data handling.
 
-Uses the **OpenWeatherMap API** for current weather and 5-day forecast data.
-Docs: https://openweathermap.org/api
+### Key Features
+- **Real-time Search**: Fetches data directly from the OpenWeatherMap API.
+- **Dynamic Weather Cards**: Displays city name, temperature, and weather conditions.
+- **Advanced Filtering**: Filter the saved cities list by weather condition (Clear, Clouds, Rain).
+- **Sorting Logic**: Sort cities by name (A-Z/Z-A) or temperature (High-Low).
+- **Higher-Order Functions**: Implemented using `.map()`, `.filter()`, and `.sort()` to satisfy Milestone 3 requirements.
+- **Responsive Layout**: Designed to be viewable on both desktop and mobile devices.
 
----
+## 🛠️ Tech Stack
+- **HTML5**: Semantic structure.
+- **CSS3**: Basic Flexbox layout with mobile responsiveness.
+- **JavaScript (ES6)**: Fetch API and Higher-Order Functions.
+- **API**: [OpenWeatherMap API](https://openweathermap.org/api)
 
-## What it does
+## 🚀 Getting Started
 
-- Search weather by city name
-- Loads your local weather automatically using the browser's Geolocation API
-- Shows a 5-day forecast
-- Gives clothing/activity suggestions based on temperature and conditions
-- Background color changes depending on how hot or cold it is
-- Filter and sort forecast data (built using array HOFs — no for loops)
-- Save favourite cities using Local Storage
-- Dark/light mode toggle
+1. **Clone the project**:
+   ```bash
+   git clone https://github.com/aryan118335/Smart-City-Weather-Dashboard.git
+   ```
 
----
+2. **API Configuration**:
+   - Get a free API key from [OpenWeatherMap](https://openweathermap.org).
+   - Open `script.js` and replace the `API_KEY` variable with your unique key.
 
-## Tech used
+3. **Run Locally**:
+   - Open `index.html` in any modern web browser or use a local server like `Live Server`.
 
-HTML, CSS, vanilla JavaScript, Fetch API, Geolocation API, Local Storage
-
----
-
-## Running it locally
-
-1. Clone the repo
-2. Get a free API key from https://openweathermap.org
-3. Paste it into `api.js` where it says `YOUR_API_KEY`
-4. Open `index.html` in your browser
-
----
+## 📝 Milestone 3 Requirements Verified
+- [x] Use of `.filter()` to manage search results.
+- [x] Use of `.map()` to render dynamic UI components.
+- [x] Use of `.sort()` for data organization.
+- [x] Minimalist, clean CSS using standard fonts (Arial).

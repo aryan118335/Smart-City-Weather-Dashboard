@@ -2,11 +2,8 @@ const API_KEY = "ee4596ec30de2dfcd65f46f503cd00eb";
 
 
 const cityInput = document.getElementById("cityInput");
-
 const btnSearch = document.getElementById("btnSearch");
-
 const loadingDiv = document.getElementById("loading");
-
 const errorDiv = document.getElementById("error");
 const dashboard = document.getElementById("dashboard");
 
@@ -22,25 +19,23 @@ const weatherData = [
   { name: "London", temp: 16, condition: "Rain", category: "rain", liked: false },
   { name: "Tokyo", temp: 19, condition: "Clear", category: "clear", liked: false },
   { name: "Sydney", temp: 25, condition: "Clouds", category: "clouds", liked: false },
+  { name: "Paris", temp: 18, condition: "Clear", category: "clear", liked: false },
 ];
 
 const cityName = document.getElementById("cityName");
 const temp = document.getElementById("temp");
-
 const desc = document.getElementById("desc");
 
-
-
-
 btnSearch.addEventListener("click", function() {
-  // console.log("Search button was clicked");
+  if (cityInput.value.trim() !== "") {
+    // console.log("User searched for: " + cityInput.value);
+    getWeather(cityInput.value.trim());
+  }
+});
 
-
-  if (cityInput.value !== "") {
-    
-    // console.log("User typed: " + cityInput.value);
-
-    getWeather(cityInput.value);
+cityInput.addEventListener("keydown", function(event) {
+  if (event.key === "Enter" && cityInput.value.trim() !== "") {
+    getWeather(cityInput.value.trim());
   }
 });
 
@@ -90,6 +85,7 @@ function updateCityCards() {
     return b.temp - a.temp;
   });
 
+  // console.log("Rendering " + sorted.length + " cities");
   renderCityList(sorted);
 }
 
@@ -120,54 +116,29 @@ themeToggle.addEventListener("click", function() {
 updateCityCards();
 
 function getWeather(city) {
-
   loadingDiv.classList.remove("hidden");
-
   dashboard.classList.add("hidden");
-  
   errorDiv.classList.add("hidden");
-
-  // console.log("Fetching data for " + city);
-
-
-
 
   fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + API_KEY + "&units=metric")
     .then(function(res) {
-
-      // console.log("Got response from API");
-      
       if (res.ok === false) {
         throw new Error("City not found");
       }
       return res.json();
     })
-
     .then(function(data) {
-      // console.log(data);
-      
-
       cityName.textContent = data.name;
-
       temp.textContent = Math.round(data.main.temp) + "°C";
       desc.textContent = data.weather[0].main;
 
-
-
+      // console.log("Weather fetch successful", data);
       loadingDiv.classList.add("hidden");
-      
       dashboard.classList.remove("hidden");
     })
-
-
     .catch(function(err) {
-
-      // console.log("An error happened: " + err);
-      
       loadingDiv.classList.add("hidden");
       errorDiv.textContent = err.message;
-
       errorDiv.classList.remove("hidden");
-
     });
 }
